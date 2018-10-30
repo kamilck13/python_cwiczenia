@@ -21,7 +21,7 @@ for i in "axby": print ord(i) if ord(i) < 100 else i
 #3.2
 L = [3, 5, 4]
 L = L.sort()
-#jest dobrze
+#składniowo jest dobrze, ale nie ma sensu
 
 x, y, z = 1, 2, 3
 

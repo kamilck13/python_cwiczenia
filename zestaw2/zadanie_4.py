@@ -2,7 +2,7 @@
 while True:
 	try:
 		line = (input("Podaj liczbe: "))
-		n = int(line)
+		n = float(line)
 		print(str(n) + ' ' + str(pow(n, 3)))
 		
 	except ValueError:
