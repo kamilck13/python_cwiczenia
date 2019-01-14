@@ -2,9 +2,9 @@
 import unittest
 
 def solve1(a, b, c):
-    if a == 0:
+    if a == 0 and b!=0:
         return 'y = '+str(-c/b)+'\nx = 0'
-    if b == 0:
+    if a!= 0 and b == 0:
         return 'x = '+str(-c/a)+'\ny = 0'
     if a == 0 and b == 0 and c == 0:
         return "Uklad rownan posiada nieskonczenie wiele rozwiazan"
