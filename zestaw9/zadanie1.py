@@ -16,14 +16,14 @@ def printList(node):
 
 
 def remove_head(node):
-    if node.data == None:
+    if node == None:
         raise ValueError("Lista jest pusta")
     if node.next == None:
-        return Node(), node.data
-    return node.next, node.next.data
+        return None, node.data
+    return node.next, node.data
 
 def remove_tail(node):
-    if node.data == None:
+    if node == None:
         raise ValueError("Lista jest pusta")
     last = None
     head = node
@@ -31,15 +31,17 @@ def remove_tail(node):
         last = node
         node = node.next
     if last == None:
-        return Node(), None
+        return None, node.data
     last.next = None
-    return head, head.data
+    return head, node.data
     
-
 print('test delete tail')
 head = None
 head = Node(1, head)
 head = Node(2, head)
+head = Node(3, head)
+printList(head)
+head, data = remove_tail(head)
 printList(head)
 head, data = remove_tail(head)
 printList(head)
@@ -51,6 +53,9 @@ print('test delete head')
 head = None
 head = Node(1, head)
 head = Node(2, head)
+head = Node(3, head)
+printList(head)
+head, data = remove_head(head)
 printList(head)
 head, data = remove_head(head)
 printList(head)
