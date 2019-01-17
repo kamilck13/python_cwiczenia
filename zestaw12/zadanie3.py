@@ -2,35 +2,35 @@
 import unittest
 
 def mediana_sort(L, left, right):
-    sort = sorted(L)
+    L[left:right+1] = sorted(L[left:right+1])
     length = right - left + 1
     mid = int(length / 2) + left
     if length == 1:
-        return sort[left]
+        return L[left]
     if not length % 2:
-        x = sort[mid]
-        y = sort[mid-1]
+        x = L[mid]
+        y = L[mid-1]
         return (x + y) / 2
     else:
-        return sort[mid]
+        return L[mid]
 
 
 class AllTests(unittest.TestCase):
     def test1(self):
-        L = [5, 2, 4, 3, 1, 6]
-        self.assertEqual(mediana_sort(L, 2, 5), 4.5)
+        L = [5, 2, 4, 3, 1, 1]
+        self.assertEqual(mediana_sort(L, 2, 5), 2.0)
     def test11(self):
         L = [5, 2, 4, 3, 1, 6]
-        self.assertEqual(mediana_sort(L, 2, 2), 3)
+        self.assertEqual(mediana_sort(L, 2, 2), 4)
     def test12(self):
         L = [5, 2, 4, 3, 1, 6]
         self.assertEqual(mediana_sort(L, 2, 3), 3.5)
     def test13(self):
         L = [5, 2, 4, 3, 1, 6]
-        self.assertEqual(mediana_sort(L, 2, 4), 4)
+        self.assertEqual(mediana_sort(L, 2, 4), 3)
     def test14(self):
         L = [5, 2, 4, 3, 1, 6]
-        self.assertEqual(mediana_sort(L, 1, 4), 3.5)
+        self.assertEqual(mediana_sort(L, 1, 4), 2.5)
 
     def test2(self):
         L = [5, 8, -1, 6, 6, 1, 10]
